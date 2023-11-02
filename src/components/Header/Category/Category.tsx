@@ -39,10 +39,6 @@ const links: LinksType[] = [
 const Category: React.FC = () => {
   const pathname: string = usePathname();
 
-  if (['/sign-up', '/sign-in'].includes(pathname) === true) {
-    return <></>;
-  }
-
   return (
     <div>
       <ul className={styles.nav}>
