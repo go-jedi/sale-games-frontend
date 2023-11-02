@@ -2,10 +2,12 @@ import React from 'react';
 
 import styles from '@/app/page.module.scss';
 
+import CarouselComponent from '@/instruments/Carousel/Carousel';
+
 const RootPage: React.FC = () => {
   return (
     <div>
-      <div style={{ color: '#fff' }}>Главная</div>
+      <CarouselComponent />
     </div>
   );
 };
