@@ -1,9 +1,5 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
-
-import { usePathname } from 'next/navigation';
 
 import styles from '@/components/Header/Auth/Auth.module.scss';
 
@@ -27,12 +23,6 @@ const links: LinksType[] = [
 ];
 
 const Auth: React.FC = () => {
-  const pathname: string = usePathname();
-
-  if (['/sign-up', '/sign-in'].includes(pathname) === true) {
-    return <></>;
-  }
-
   return (
     <div className={styles.auth}>
       <div className={styles.links}>
