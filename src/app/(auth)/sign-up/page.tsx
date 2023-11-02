@@ -3,7 +3,7 @@ import React from 'react';
 const SignUpPage: React.FC = () => {
   return (
     <div>
-      <div>SignUp Page</div>
+      <div style={{ color: '#fff' }}>Регистрация</div>
     </div>
   );
 };

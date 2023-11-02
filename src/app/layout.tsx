@@ -23,9 +23,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html lang="en">
       <body className={roboto.className}>
         <Header />
-        {/* <ReduxProvider> */}
-        {children}
-        {/* </ReduxProvider> */}
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );
