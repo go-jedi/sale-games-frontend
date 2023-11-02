@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navlink {
+  &:not(:first-child) {
+    margin-left: 7px;
+  }
+}
+
+.link {
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #bdbdbd;
+  }
+}
+
+.active {
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  border-bottom: 2px solid #24ca2b;
+
+  &:hover {
+    color: #bdbdbd;
+  }
+}
