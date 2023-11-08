@@ -2,26 +2,41 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Carousel } from 'antd';
 
-import styles from '@/instruments/Carousel/Carousel.module.scss';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation, Scrollbar } from 'swiper/modules';
+
+import styles from '@/instruments/CarouselSwiper/CarouselSwiper.module.scss';
+
+import 'swiper/scss';
+import 'swiper/scss/free-mode';
+import 'swiper/scss/navigation';
+import 'swiper/scss/thumbs';
 
 import Planet from '@/assets/img/planet.webp';
 import StarWars from '@/assets/img/starwars.webp';
 import Hogwarts from '@/assets/img/hogwarts.webp';
 
-const CarouselComponent: React.FC = () => {
+const CarouselSwiper: React.FC = () => {
   return (
-    <Carousel
-      effect="fade"
-      dotPosition="right"
-      waitForAnimate
-      dots
-      autoplay
-      speed={2000}
-      autoplaySpeed={5000}>
-      <div>
-        <h3 className={styles.content}>
+    <>
+      <Swiper
+        scrollbar={{
+          hide: true,
+        }}
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation, Scrollbar]}
+        className={styles.carousel}>
+        <SwiperSlide>
           <Image className={styles.image} src={Planet} priority={true} alt="planet" />
           <div className={styles.block}>
             <div className={styles.title}>STARFIELD</div>
@@ -29,10 +44,8 @@ const CarouselComponent: React.FC = () => {
               <button>Подробнее</button>
             </div>
           </div>
-        </h3>
-      </div>
-      <div>
-        <h3 className={styles.content}>
+        </SwiperSlide>
+        <SwiperSlide>
           <Image className={styles.image} src={StarWars} priority={true} alt="starWars" />
           <div className={styles.block}>
             <div className={styles.title}>Star Wars</div>
@@ -40,10 +53,8 @@ const CarouselComponent: React.FC = () => {
               <button>Подробнее</button>
             </div>
           </div>
-        </h3>
-      </div>
-      <div>
-        <h3 className={styles.content}>
+        </SwiperSlide>
+        <SwiperSlide>
           <Image className={styles.image} src={Hogwarts} priority={true} alt="hogwarts" />
           <div className={styles.block}>
             <div className={styles.title}>Hogwarts Legacy</div>
@@ -51,10 +62,10 @@ const CarouselComponent: React.FC = () => {
               <button>Подробнее</button>
             </div>
           </div>
-        </h3>
-      </div>
-    </Carousel>
+        </SwiperSlide>
+      </Swiper>
+    </>
   );
 };
 
-export default CarouselComponent;
+export default CarouselSwiper;

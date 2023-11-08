@@ -13,10 +13,6 @@
   margin-left: 30px;
 }
 
-.active {
-  border-bottom: 1px solid #fff;
-}
-
 .link {
   text-decoration: none;
   text-transform: uppercase;
@@ -24,19 +20,12 @@
   font-weight: 700;
   color: #fff;
 
+  svg {
+    width: 13px;
+    height: 13px;
+  }
+
   &:hover {
     color: #ffffffc9;
   }
-}
-
-.caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-top: 4px dashed;
-  border-top: 4px solid\9;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
 }

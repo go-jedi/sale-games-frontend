@@ -8,7 +8,7 @@ const SignInPage: React.FC = () => {
   return (
     <div className={styles.signin}>
       <div className={styles.title}>
-        Войти в <span className={styles.span}>GamesRent</span>
+        Войти в <span className={styles.span}>YouPlay</span>
       </div>
       <div className={styles.subtitle}>Войти в аккаунт, чтобы поиграть в любимую игру</div>
       <SignIn />
