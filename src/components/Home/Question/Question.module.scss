@@ -1,0 +1,34 @@
+.question {
+  margin-top: 65px;
+  padding: 40px 50px;
+  border-top: 1px solid #ffffff75;
+  border-bottom: 1px solid #ffffff75;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+  text-align: left;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.link {
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.icon {
+  font-size: 30px;
+  color: #fff;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.7882352941);
+  }
+}

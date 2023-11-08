@@ -1,0 +1,35 @@
+.socialnetwork {
+  padding: 40px 50px;
+  border-bottom: 1px dashed #ffffff75;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+  text-align: left;
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.link {
+  text-decoration: none;
+
+  &:not(:first-child) {
+    margin-left: 100px;
+  }
+}
+
+.icon {
+  font-size: 50px;
+  color: #fff;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.7882352941);
+  }
+}
