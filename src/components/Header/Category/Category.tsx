@@ -11,6 +11,7 @@ type LinksType = {
   id: number;
   name: string;
   route: string;
+  isCaret: boolean;
 };
 
 const links: LinksType[] = [
@@ -18,21 +19,31 @@ const links: LinksType[] = [
     id: 1,
     name: 'Главная',
     route: '/',
+    isCaret: true,
   },
   {
     id: 2,
     name: 'Магазин',
     route: '/shop',
+    isCaret: true,
   },
   {
     id: 3,
     name: 'Новости',
     route: '/news',
+    isCaret: false,
   },
   {
     id: 4,
     name: 'Отзывы',
     route: '/reviews',
+    isCaret: false,
+  },
+  {
+    id: 5,
+    name: 'Блог',
+    route: '/blog',
+    isCaret: false,
   },
 ];
 
@@ -41,12 +52,15 @@ const Category: React.FC = () => {
 
   return (
     <div>
-      <ul className={styles.nav}>
+      <ul className={styles.menu}>
         {links.map((e: LinksType) => {
           return (
-            <li className={styles.navlink} key={e.id}>
-              <Link className={pathname === e.route ? styles.active : styles.link} href={e.route}>
+            <li
+              key={e.id}
+              className={`${styles.block} ${pathname === e.route ? styles.active : ''}`}>
+              <Link className={styles.link} href={e.route}>
                 {e.name}
+                {e.isCaret && <span className={styles.caret}></span>}
               </Link>
             </li>
           );

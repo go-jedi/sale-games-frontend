@@ -27,8 +27,8 @@
     padding: 0 10px;
     width: 350px;
     height: 37px;
-    color: #fff;
-    background-color: #2b2929;
+    color: #000;
+    background-color: #ffffffe1;
     border-radius: 5px;
 
     &:focus {
@@ -47,11 +47,12 @@
 .btn {
   width: 150px;
   height: 34px;
+  font-size: 16px;
   border-radius: 5px;
   color: #000;
-  background-color: #24ca2b;
+  background-color: #fff;
 
   &:hover {
-    background-color: #24ca2cda;
+    background-color: #ffffffd9;
   }
 }

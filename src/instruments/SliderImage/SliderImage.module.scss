@@ -1,0 +1,34 @@
+.slider {
+  margin: 20px 0;
+  padding: 0 50px;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: relative;
+  width: 110px;
+  height: 370px;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.block {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  font-weight: 500;
+  border: 3px solid rgba(57, 57, 57, 0.698);
+  color: #fff;
+  background: linear-gradient(transparent 70%, rgba(0, 0, 0, 0.779), #151515, #000);
+}
+
+// linear-gradient(transparent 70%,rgba(0,0,0,.779),#151515,#000)
