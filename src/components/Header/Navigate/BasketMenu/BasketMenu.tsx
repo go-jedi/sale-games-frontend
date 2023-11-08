@@ -1,11 +1,16 @@
 'use client';
 
 import React from 'react';
+
+import { useAppSelector } from '@/redux/store';
+
 import { Drawer, Tooltip } from 'antd';
 
 import styles from '@/components/Header/Navigate/BasketMenu/BasketMenu.module.scss';
 
 const BasketMenu: React.FC = () => {
+  const { scroll } = useAppSelector((state) => state.scroll);
+
   const [open, setOpen] = React.useState(false);
 
   const showDrawer = () => {
@@ -17,7 +22,7 @@ const BasketMenu: React.FC = () => {
   };
 
   return (
-    <>
+    <li className={styles.block} style={{ height: `${scroll.scrollY > 119 ? '50px' : '80px'}` }}>
       <Tooltip title="Корзина">
         <svg
           className={styles.icon}
@@ -40,7 +45,7 @@ const BasketMenu: React.FC = () => {
         <p>Some contents...</p>
         <p>Some contents...</p>
       </Drawer>
-    </>
+    </li>
   );
 };
 

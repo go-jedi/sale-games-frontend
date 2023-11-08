@@ -1,5 +1,6 @@
+'use client';
+
 import React from 'react';
-import Link from 'next/link';
 
 import styles from '@/components/Header/Navigate/Navigate.module.scss';
 
@@ -11,15 +12,9 @@ const Navigate: React.FC = () => {
   return (
     <div>
       <ul className={styles.menu}>
-        <li className={styles.block}>
-          <UserMenu />
-        </li>
-        <li className={styles.block}>
-          <SearchMenu />
-        </li>
-        <li className={styles.block}>
-          <BasketMenu />
-        </li>
+        <UserMenu />
+        <SearchMenu />
+        <BasketMenu />
       </ul>
     </div>
   );

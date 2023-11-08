@@ -22,10 +22,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <body className={lato.className}>
-        <Header />
-        {/* <ReduxProvider> */}
-        {children}
-        {/* </ReduxProvider> */}
+        <ReduxProvider>
+          <Header />
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );

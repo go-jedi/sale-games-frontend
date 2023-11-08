@@ -9,7 +9,6 @@ const Novelty: React.FC = () => {
     <div className={styles.novelty}>
       <div className={styles.title}>Новинки</div>
       <SliderImage />
-      <div style={{ marginTop: '100px' }}>112</div>
     </div>
   );
 };
