@@ -2,12 +2,16 @@
 
 import React from 'react';
 
+import { useAppSelector } from '@/redux/store';
+
 import { Drawer, Tooltip } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
 import styles from '@/components/Header/Navigate/SearchMenu/SearchMenu.module.scss';
 
 const SearchMenu: React.FC = () => {
+  const { scroll } = useAppSelector((state) => state.scroll);
+
   const [open, setOpen] = React.useState<boolean>(false);
 
   const showDrawer = (): void => {
@@ -27,7 +31,7 @@ const SearchMenu: React.FC = () => {
   };
 
   return (
-    <>
+    <li className={styles.block} style={{ height: `${scroll.scrollY > 119 ? '50px' : '80px'}` }}>
       <Tooltip title="Поиск">
         <SearchOutlined className={styles.icon} onClick={showDrawer} />
       </Tooltip>
@@ -36,7 +40,7 @@ const SearchMenu: React.FC = () => {
         <p>Some contents...</p>
         <p>Some contents...</p>
       </Drawer>
-    </>
+    </li>
   );
 };
 

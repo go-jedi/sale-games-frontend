@@ -2,8 +2,10 @@
 
 import React from 'react';
 import Link from 'next/link';
-
 import { usePathname } from 'next/navigation';
+import { useAppDispatch, useAppSelector } from '@/redux/store';
+
+import { setScroll } from '@/redux/scroll/slice';
 
 import styles from '@/components/Header/Category/Category.module.scss';
 
@@ -48,7 +50,21 @@ const links: LinksType[] = [
 ];
 
 const Category: React.FC = () => {
+  const { scroll } = useAppSelector((state) => state.scroll);
+  const dispatch = useAppDispatch();
+
   const pathname: string = usePathname();
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      dispatch(setScroll({ scrollX: window.scrollX, scrollY: window.scrollY }));
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [dispatch]);
 
   return (
     <div>
@@ -57,7 +73,8 @@ const Category: React.FC = () => {
           return (
             <li
               key={e.id}
-              className={`${styles.block} ${pathname === e.route ? styles.active : ''}`}>
+              className={`${styles.block} ${pathname === e.route ? styles.active : ''}`}
+              style={{ height: `${scroll.scrollY > 119 ? '50px' : '80px'}` }}>
               <Link className={styles.link} href={e.route}>
                 {e.name}
                 {e.isCaret && <span className={styles.caret}></span>}
