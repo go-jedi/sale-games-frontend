@@ -17,52 +17,89 @@ import GrandTheftAuth from '@/assets/img/grandtheftauth.jpg';
 import AssasinsCreed from '@/assets/img/assasinscreed.jpg';
 import EaSportFc from '@/assets/img/easportfc24.jpg';
 
+import SliderImageSkeleton from '@/instruments/SliderImage/SliderImageSkeleton/SliderImageSkeleton';
+
 const SliderImage: React.FC = () => {
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    setLoading(false);
+  }, []);
+
   return (
     <>
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={10}
-        // pagination={{
-        //   clickable: true,
-        // }}
-        breakpoints={{
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 50,
-          },
-        }}
-        modules={[Pagination]}
-        className={styles.slider}>
-        <SwiperSlide className={styles.slide}>
-          <Image className={styles.image} src={SurfsharkImage} alt={'Background Image'} />
-          <div className={styles.block}>Surfshark VPN</div>
-        </SwiperSlide>
-        <SwiperSlide className={styles.slide}>
-          <Image className={styles.image} src={FootBallManager} alt={'Background Image'} />
-          <div className={styles.block}>Football Manager 2024</div>
-        </SwiperSlide>
-        <SwiperSlide className={styles.slide}>
-          <Image className={styles.image} src={GrandTheftAuth} alt={'Background Image'} />
-          <div className={styles.block}>Grand Theft Auto V</div>
-        </SwiperSlide>
-        <SwiperSlide className={styles.slide}>
-          <Image className={styles.image} src={AssasinsCreed} alt={'Background Image'} />
-          <div className={styles.block}>Assassin`s Creed Mirage</div>
-        </SwiperSlide>
-        <SwiperSlide className={styles.slide}>
-          <Image className={styles.image} src={EaSportFc} alt={'Background Image'} />
-          <div className={styles.block}>EA Sports FC 24 - Ultimate Edition ssssssssss</div>
-        </SwiperSlide>
-      </Swiper>
+      {loading ? (
+        <SliderImageSkeleton />
+      ) : (
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={10}
+          // pagination={{
+          //   clickable: true,
+          // }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+          }}
+          modules={[Pagination]}
+          className={styles.slider}>
+          <SwiperSlide className={styles.slide}>
+            <Image
+              className={styles.image}
+              src={SurfsharkImage}
+              priority={true}
+              alt={'Background Image'}
+            />
+            <div className={styles.block}>Surfshark VPN</div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.slide}>
+            <Image
+              className={styles.image}
+              src={FootBallManager}
+              priority={true}
+              alt={'Background Image'}
+            />
+            <div className={styles.block}>Football Manager 2024</div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.slide}>
+            <Image
+              className={styles.image}
+              src={GrandTheftAuth}
+              priority={true}
+              alt={'Background Image'}
+            />
+            <div className={styles.block}>Grand Theft Auto V</div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.slide}>
+            <Image
+              className={styles.image}
+              src={AssasinsCreed}
+              priority={true}
+              alt={'Background Image'}
+            />
+            <div className={styles.block}>Assassin`s Creed Mirage</div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.slide}>
+            <Image
+              className={styles.image}
+              src={EaSportFc}
+              priority={true}
+              alt={'Background Image'}
+            />
+            <div className={styles.block}>EA Sports FC 24 - Ultimate Edition ssssssssss</div>
+          </SwiperSlide>
+        </Swiper>
+      )}
     </>
   );
 };
