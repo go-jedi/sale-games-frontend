@@ -29,10 +29,10 @@ const items: MenuProps['items'] = [
 ];
 
 const UserMenu: React.FC = () => {
-  const { scroll } = useAppSelector((state) => state.scroll);
+  const { isChangeHeader } = useAppSelector((state) => state.scroll);
 
   return (
-    <li className={styles.block} style={{ height: `${scroll.scrollY > 119 ? '50px' : '80px'}` }}>
+    <li className={styles.block} style={{ height: `${isChangeHeader === true ? '50px' : '80px'}` }}>
       <Dropdown menu={{ items }} placement="bottomRight" arrow={{ pointAtCenter: true }}>
         <UserOutlined className={styles.icon} />
       </Dropdown>

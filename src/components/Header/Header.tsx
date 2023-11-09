@@ -11,13 +11,13 @@ import Category from '@/components/Header/Category/Category';
 import Navigate from '@/components/Header/Navigate/Navigate';
 
 const Header: React.FC = () => {
-  const { scroll } = useAppSelector((state) => state.scroll);
+  const { isChangeHeader } = useAppSelector((state) => state.scroll);
 
   return (
     <div>
       <div
         className={styles.header}
-        style={{ height: `${scroll.scrollY > 119 ? '50px' : '80px'}` }}>
+        style={{ height: `${isChangeHeader === true ? '50px' : '80px'}` }}>
         <div className={styles.header__left}>
           <Logo />
           <Category />
