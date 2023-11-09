@@ -9,7 +9,7 @@ import { Drawer, Tooltip } from 'antd';
 import styles from '@/components/Header/Navigate/BasketMenu/BasketMenu.module.scss';
 
 const BasketMenu: React.FC = () => {
-  const { scroll } = useAppSelector((state) => state.scroll);
+  const { isChangeHeader } = useAppSelector((state) => state.scroll);
 
   const [open, setOpen] = React.useState(false);
 
@@ -22,7 +22,7 @@ const BasketMenu: React.FC = () => {
   };
 
   return (
-    <li className={styles.block} style={{ height: `${scroll.scrollY > 119 ? '50px' : '80px'}` }}>
+    <li className={styles.block} style={{ height: `${isChangeHeader === true ? '50px' : '80px'}` }}>
       <Tooltip title="Корзина">
         <svg
           className={styles.icon}

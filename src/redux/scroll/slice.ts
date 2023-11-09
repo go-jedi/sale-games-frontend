@@ -1,24 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { ScrollSliceState, Scroll } from '@/redux/scroll/types';
+import { ScrollSliceState } from '@/redux/scroll/types';
 
 const initialState: ScrollSliceState = {
-  scroll: {
-    scrollX: 0,
-    scrollY: 0,
-  },
+  isChangeHeader: false,
 };
 
 const scrollSlice = createSlice({
   name: 'scroll',
   initialState,
   reducers: {
-    setScroll(state: ScrollSliceState, action: PayloadAction<Scroll>) {
-      state.scroll = action.payload;
+    setIsChangeHeader(state: ScrollSliceState, action: PayloadAction<boolean>) {
+      state.isChangeHeader = action.payload;
     },
   },
 });
 
-export const { setScroll } = scrollSlice.actions;
+export const { setIsChangeHeader } = scrollSlice.actions;
 
 export default scrollSlice.reducer;
