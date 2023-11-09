@@ -1,9 +1,13 @@
 import React from 'react';
 
+import styles from '@/app/news/page.module.scss';
+
+import News from '@/components/News/News';
+
 const NewsPage: React.FC = () => {
   return (
-    <div>
-      <div style={{ color: '#fff', paddingTop: '100px' }}>Новости</div>
+    <div className={styles.news}>
+      <News />
     </div>
   );
 };
