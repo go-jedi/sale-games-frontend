@@ -1,6 +1,6 @@
 .block {
   display: flex;
-  margin-top: 15px;
+  margin: 15px 0;
   padding: 15px;
   cursor: pointer;
   background: rgba(255, 255, 255, 0.1);
@@ -10,7 +10,6 @@
   transition-duration: 1s;
 
   &:hover {
-    // border: 5.5px solid rgba(99, 96, 96, 0.15);
     transform: scale(1.01);
     transition-duration: 1s;
   }

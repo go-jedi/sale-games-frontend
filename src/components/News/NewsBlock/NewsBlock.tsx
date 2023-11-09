@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
 
 import styles from '@/components/News/NewsBlock/NewsBlock.module.scss';
 
@@ -19,17 +20,14 @@ type PropsType = {
 };
 
 const NewsBlock: React.FC<PropsType> = (props: PropsType) => {
-  const [loading, setLoading] = React.useState(true);
-
-  React.useEffect(() => {
-    setLoading(false);
-  }, []);
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+    triggerOnce: true,
+  });
 
   return (
-    <>
-      {loading ? (
-        <NewsBlockSkeleton />
-      ) : (
+    <div ref={ref}>
+      {inView ? (
         <Link className={styles.block} href={`/news/${props.id}`}>
           <div className={styles.img}>
             <Image
@@ -47,8 +45,10 @@ const NewsBlock: React.FC<PropsType> = (props: PropsType) => {
             <div className={styles.description}>{props.description}</div>
           </div>
         </Link>
+      ) : (
+        <NewsBlockSkeleton />
       )}
-    </>
+    </div>
   );
 };
 
