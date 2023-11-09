@@ -1,0 +1,13 @@
+.block {
+  padding: 30px;
+  width: 364px;
+  height: 201px;
+  transform: skew(-7deg);
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-transition: 0.3s background ease;
+  transition: 0.3s background ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.13);
+  }
+}

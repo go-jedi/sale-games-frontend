@@ -1,8 +1,12 @@
+'use client';
+
 import React from 'react';
 
 import { WifiOutlined, ClockCircleOutlined, TeamOutlined } from '@ant-design/icons';
 
 import styles from '@/components/Home/Info/Info.module.scss';
+
+import InfoSkeleton from '@/components/Home/Info/InfoSkeleton/InfoSkeleton';
 
 type InformationsType = {
   id: number;
@@ -33,17 +37,29 @@ const informations: InformationsType[] = [
 ];
 
 const Info: React.FC = () => {
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    setLoading(false);
+  }, []);
+
   return (
     <div className={styles.info}>
-      {informations.map((e: InformationsType) => {
-        return (
-          <div key={e.id} className={styles.block}>
-            <div className={styles.img}>{e.icon}</div>
-            <div className={styles.title}>{e.title}</div>
-            <div className={styles.text}>{e.text}</div>
-          </div>
-        );
-      })}
+      {loading ? (
+        <InfoSkeleton />
+      ) : (
+        <>
+          {informations.map((e: InformationsType) => {
+            return (
+              <div key={e.id} className={styles.block}>
+                <div className={styles.img}>{e.icon}</div>
+                <div className={styles.title}>{e.title}</div>
+                <div className={styles.text}>{e.text}</div>
+              </div>
+            );
+          })}
+        </>
+      )}
     </div>
   );
 };
