@@ -22,7 +22,12 @@ const Home = () => {
 
   React.useEffect(() => {
     dispatch(setIsChangeHeader(inView));
+
+    return () => {
+      dispatch(setIsChangeHeader(false));
+    };
   }, [inView, dispatch]);
+
   return (
     <div>
       <CarouselSwiper />
