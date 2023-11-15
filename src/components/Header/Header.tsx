@@ -17,7 +17,10 @@ const Header: React.FC = () => {
     <div>
       <div
         className={styles.header}
-        style={{ height: `${isChangeHeader === true ? '50px' : '80px'}` }}>
+        style={{
+          height: `${isChangeHeader === true ? '50px' : '80px'}`,
+          background: `${isChangeHeader === true ? 'rgba(8, 3, 37, 0.9)' : 'rgba(8, 3, 37, 0.4)'}`,
+        }}>
         <div className={styles.header__left}>
           <Logo />
           <Category />

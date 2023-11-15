@@ -15,3 +15,17 @@
   color: #fff;
   font-weight: 600;
 }
+
+.btn {
+  cursor: pointer;
+  margin-top: 15px;
+  width: 60px;
+  height: 28px;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: #fff;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.7882352941);
+  }
+}

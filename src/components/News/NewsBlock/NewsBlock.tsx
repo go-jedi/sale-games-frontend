@@ -3,7 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useAppDispatch } from '@/redux/store';
 import { useInView } from 'react-intersection-observer';
+
+import { setIsChangeHeader } from '@/redux/scroll/slice';
 
 import styles from '@/components/News/NewsBlock/NewsBlock.module.scss';
 
@@ -20,10 +23,20 @@ type PropsType = {
 };
 
 const NewsBlock: React.FC<PropsType> = (props: PropsType) => {
+  const dispatch = useAppDispatch();
+
   const { ref, inView } = useInView({
     threshold: 0.5,
     triggerOnce: true,
   });
+
+  React.useEffect(() => {
+    dispatch(setIsChangeHeader(true));
+
+    return () => {
+      dispatch(setIsChangeHeader(false));
+    };
+  }, [dispatch]);
 
   return (
     <div ref={ref}>
