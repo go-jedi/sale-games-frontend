@@ -5,7 +5,7 @@ import React from 'react';
 import { useAppSelector } from '@/redux/store';
 
 import { Drawer, Tooltip } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import { IoIosSearch } from 'react-icons/io';
 
 import styles from '@/components/Header/Navigate/SearchMenu/SearchMenu.module.scss';
 
@@ -33,7 +33,7 @@ const SearchMenu: React.FC = () => {
   return (
     <li className={styles.block} style={{ height: `${isChangeHeader === true ? '50px' : '80px'}` }}>
       <Tooltip title="Поиск">
-        <SearchOutlined className={styles.icon} onClick={showDrawer} />
+        <IoIosSearch className={styles.icon} onClick={showDrawer} />
       </Tooltip>
       <Drawer title="Поиск" placement="top" onClose={onClose} open={open}>
         <p>Some contents...</p>

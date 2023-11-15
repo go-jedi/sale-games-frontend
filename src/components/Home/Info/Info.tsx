@@ -37,7 +37,7 @@ const informations: InformationsType[] = [
 ];
 
 const Info: React.FC = () => {
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     setLoading(false);

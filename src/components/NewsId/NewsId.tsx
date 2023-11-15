@@ -11,7 +11,7 @@ import Card from '@/components/NewsId/Card/Card';
 import Reserve from '@/components/Home/Reserve/Reserve';
 
 const NewsId: React.FC = () => {
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     setLoading(false);
