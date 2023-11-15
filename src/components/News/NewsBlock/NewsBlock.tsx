@@ -3,9 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useAppDispatch } from '@/redux/store';
+
 import { useInView } from 'react-intersection-observer';
 
+import { useAppDispatch } from '@/redux/store';
 import { setIsChangeHeader } from '@/redux/scroll/slice';
 
 import styles from '@/components/News/NewsBlock/NewsBlock.module.scss';
