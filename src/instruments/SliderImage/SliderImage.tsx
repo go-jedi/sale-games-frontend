@@ -20,7 +20,7 @@ import EaSportFc from '@/assets/img/easportfc24.jpg';
 import SliderImageSkeleton from '@/instruments/SliderImage/SliderImageSkeleton/SliderImageSkeleton';
 
 const SliderImage: React.FC = () => {
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState<boolean>(true);
 
   React.useEffect(() => {
     setLoading(false);

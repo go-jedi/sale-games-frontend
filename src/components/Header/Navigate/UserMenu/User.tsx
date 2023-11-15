@@ -5,7 +5,7 @@ import { useAppSelector } from '@/redux/store';
 
 import type { MenuProps } from 'antd';
 import { Dropdown } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import { FaRegUser } from 'react-icons/fa6';
 
 import styles from '@/components/Header/Navigate/UserMenu/UserMenu.module.scss';
 
@@ -34,7 +34,7 @@ const UserMenu: React.FC = () => {
   return (
     <li className={styles.block} style={{ height: `${isChangeHeader === true ? '50px' : '80px'}` }}>
       <Dropdown menu={{ items }} placement="bottomRight" arrow={{ pointAtCenter: true }}>
-        <UserOutlined className={styles.icon} />
+        <FaRegUser className={styles.icon} />
       </Dropdown>
     </li>
   );
