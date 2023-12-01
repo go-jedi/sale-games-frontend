@@ -1,9 +1,13 @@
 import React from 'react';
 
+import styles from '@/app/shop/page.module.scss';
+
+import Shop from '@/components/Shop/Shop';
+
 const ShopPage: React.FC = () => {
   return (
-    <div>
-      <div style={{ color: '#fff' }}>Магазин</div>
+    <div className={styles.shop}>
+      <Shop />
     </div>
   );
 };
